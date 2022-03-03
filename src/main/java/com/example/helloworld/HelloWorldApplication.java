@@ -9,6 +9,16 @@ import io.dropwizard.setup.Environment;
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
     public static void main(String[] args) throws Exception {
         new HelloWorldApplication().run(args);
+        if (args.length > 1) {
+            switch (args[0]) {
+                case "server":
+                    System.out.println("Working as a server...");
+                    break;
+                case "client":
+                    System.out.println("Working as a client...");
+                    break;
+            }
+        }
     }
 
     @Override
