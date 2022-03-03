@@ -23,7 +23,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
 
     @Override
     public String getName() {
-        return "hellooooooo-world";
+        return "bibbidy-bobbidy";
     }
 
     @Override
