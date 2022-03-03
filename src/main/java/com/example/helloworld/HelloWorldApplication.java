@@ -17,13 +17,15 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
                 case "client":
                     System.out.println("Working as a client...");
                     break;
+                case "test":
+                    System.out.println("Nothing to do here");
             }
         }
     }
 
     @Override
     public String getName() {
-        return "hellooooooo-world";
+        return "hello-world";
     }
 
     @Override
