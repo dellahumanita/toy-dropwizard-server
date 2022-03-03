@@ -19,6 +19,8 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
                     break;
                 case "test":
                     System.out.println("Nothing to do here");
+                default:
+                    System.out.println("Choose a server or client");
             }
         }
     }
