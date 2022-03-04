@@ -9,20 +9,33 @@ on:
 
 jobs:
         build-and-test-please:
-                runs-on: ubuntu-latest
-                steps:
-                  - uses: actions/checkout@v1
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v1
 
-                  - name: Setup JDK 1.8 so that I can run Java
-                    uses: actions/setup-java@v1
-                    with:
-                      java-version: 1.8
+            - name: Setup JDK 1.8 so that I can run Java
+              uses: actions/setup-java@v1
+              with:
+                java-version: 1.8
 
-                  - name: Build with Gradle!
-                    working-directory: .
-                    run: ./gradlew build -x test
+            - name: Build with Gradle!
+              working-directory: .
+              run: ./gradlew build -x test
 
-                  - name: Run tests, please!
-                    working-directory: .
-                    run: ./gradlew test
+            - name: Run tests, please!
+              working-directory: .
+              run: ./gradlew test
+
+        rollback-relase:
+          runs-on: ubuntu-latest
+            steps:
+                - name: Rollback Release
+                  if: failure()
+                  uses: author/action-rollback@stable
+                  with:
+                    # Using a tag name
+                    # In our case, G1_DONE is the most stable release
+                    tag: 'v1.0.0'
+                  env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
