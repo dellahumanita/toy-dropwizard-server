@@ -8,7 +8,7 @@ import io.dropwizard.setup.Environment;
 
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
     public static void main(String[] args) throws Exception {
-        new HelloWorldApplication().run(args);
+
         if (args.length > 1) {
             switch (args[0]) {
                 case "server":
@@ -17,13 +17,17 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
                 case "client":
                     System.out.println("Working as a client...");
                     break;
+                case "test":
+                    System.out.println("Nothing to do here");
+                default:
+                    System.out.println("Choose a server or client");
             }
         }
     }
 
     @Override
     public String getName() {
-        return "hellooooooo-world";
+        return "hello-world";
     }
 
     @Override

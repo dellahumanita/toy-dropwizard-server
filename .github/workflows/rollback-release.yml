@@ -1,0 +1,19 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rollback Release
+        if: failure()
+        uses: author/action-rollback@stable
+        with:
+          # Using a tag name
+          # In our case, G1_DONE is the most stable release
+          tag: 'G1_DONE'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
