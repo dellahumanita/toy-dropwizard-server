@@ -1,6 +1,6 @@
 //package com.example.helloworld;
 
-//import com.example.helloworld.health.TemplateHealthCheck;
+import com.example.helloworld.health.TemplateHealthCheck;
 import com.example.helloworld.resources.HelloWorldResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
