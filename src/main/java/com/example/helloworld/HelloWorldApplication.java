@@ -1,4 +1,4 @@
-package com.example.helloworld;
+//package com.example.helloworld;
 
 import com.example.helloworld.health.TemplateHealthCheck;
 import com.example.helloworld.resources.HelloWorldResource;
